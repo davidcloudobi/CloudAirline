@@ -1,0 +1,42 @@
+﻿@model AirLine.Modules.Class.Airline
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Airline</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <span class=" btn btn-primary text-white">@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) </span>
+    <span class=" btn btn-primary text-white"> @Html.ActionLink("Back to List", "GetAll") </span>
+</p>
