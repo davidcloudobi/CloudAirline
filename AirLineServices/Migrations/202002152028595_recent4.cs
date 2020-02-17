@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intial3 : DbMigration
+    public partial class recent4 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Users", "Destination", c => c.String());
+            DropColumn("dbo.Airlines", "Photo");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Users", "Destination");
+            AddColumn("dbo.Airlines", "Photo", c => c.String());
         }
     }
 }

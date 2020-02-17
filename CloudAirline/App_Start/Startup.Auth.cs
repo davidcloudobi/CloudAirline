@@ -58,11 +58,11 @@ namespace CloudAirline
                appId: "577538826173003",
                appSecret: "241a8fcf17a1a821dbb53134887d2bf1");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "863549024403-3pvpanrfrtq286q64e9gietb4oh4ovch.apps.googleusercontent.com",
+                ClientSecret = "ZtabCs0KrHGXCHWdvNXPtziy"
+            });
         }
     }
 }

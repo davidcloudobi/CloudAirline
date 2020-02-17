@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -35,15 +36,60 @@ namespace CloudAirline.Controllers
         //############ Create ###############
         [Authorize]
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Airline item)
         {
-            if (ModelState.IsValid)
+
+            //###################################################
+
+
+            try
             {
-                airline.AddAirline(item);
-                var num = await airline.Commit();
+                if (!ModelState.IsValid)
+                {
+                    //   ViewBag
+                    return View();
+                }
+
+                var photos = Request.Files["image"];
+
+                if (photos != null)
+                {
+                    Byte[] Content = new BinaryReader(photos.InputStream).ReadBytes(photos.ContentLength);
+
+                    item.Photo  = Content;
+                }
+
+
+                // _dbProducts.AddProduct(product);
+                if (ModelState.IsValid)
+                {
+                    airline.AddAirline(item);
+                    var num = await airline.Commit();
+                    return RedirectToAction("GetAll");
+                }
             }
-            return RedirectToAction("GetAll");
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+                ViewBag.ErrorMessage = message;
+                return View();
+
+            }
+            return View();
+
+
+            //#####################################################
+
+
+
+
+            //if (ModelState.IsValid)
+            //{
+            //    airline.AddAirline(item);
+            //    var num = await airline.Commit();
+            //}
+            //return RedirectToAction("GetAll");
         }
 
         //###################################################################################

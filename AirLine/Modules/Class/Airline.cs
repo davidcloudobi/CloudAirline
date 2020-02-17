@@ -19,6 +19,7 @@ namespace AirLine.Modules.Class
         [Required]
         public string Destination { get; set; }
 
+        public byte[] Photo { get; set; }
 
 
 

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+@*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,12 +24,34 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Airline","GetAll" , "Airline")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+    </div>*@
+    
+    <div class="container m-2">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="ml-5">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="ml-5">@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="ml-5">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="ml-5">@Html.ActionLink("Airline", "GetAll", "Airline")</li>
+                </ul>
+                <span class="ml-5"> @Html.Partial("_LoginPartial")</span>
+            </div>
+        </nav>
+
     </div>
-    <div class="container body-content">
+
+<div class="container body-content mb-5">
         @RenderBody()
         <hr />
         <footer>

@@ -7,13 +7,13 @@ namespace AirLineServices.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class intial : IMigrationMetadata
+    public sealed partial class recent : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(intial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(recent));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002151022259_intial"; }
+            get { return "202002152025264_recent"; }
         }
         
         string IMigrationMetadata.Source

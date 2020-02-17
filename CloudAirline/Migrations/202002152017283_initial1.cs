@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intial : DbMigration
+    public partial class initial1 : DbMigration
     {
         public override void Up()
         {
@@ -77,56 +77,20 @@
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
-            CreateTable(
-                "dbo.TransactionDetails",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        PaymentStatus = c.Boolean(nullable: false),
-                        Person_Id = c.Int(),
-                        ApplicationUser_Id = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.Person_Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
-                .Index(t => t.Person_Id)
-                .Index(t => t.ApplicationUser_Id);
-            
-            CreateTable(
-                "dbo.Users",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 225),
-                        Address = c.String(nullable: false, maxLength: 225),
-                        Age = c.Int(nullable: false),
-                        PassportId = c.Int(nullable: false),
-                        BookingAmount = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        TravelType = c.Int(nullable: false),
-                        Time = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.TransactionDetails", "ApplicationUser_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.TransactionDetails", "Person_Id", "dbo.Users");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropIndex("dbo.TransactionDetails", new[] { "ApplicationUser_Id" });
-            DropIndex("dbo.TransactionDetails", new[] { "Person_Id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropTable("dbo.Users");
-            DropTable("dbo.TransactionDetails");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,5 +73,35 @@ namespace AirLineServices.Services
         {
             return await db.Airlines.Where(res => res.Destination == user.Destination || res.TravelType == user.TravelType || res.BookingAmount == user.BookingAmount).ToListAsync();
         }
+
+
+
+        public static byte[] GetImageFromByteArray(byte[] byteArray)
+
+        {
+            Stream stream = new MemoryStream(byteArray);
+            using (var memoryStream = new MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+                return memoryStream.ToArray();
+            }
+
+
+
+
+        }
+
+        public IEnumerable<Airline> GetAllProducts()
+        {
+
+            var content = db.Airlines.OrderBy(r => r.Name).ToList();
+            foreach (var VARIABLE in content)
+            {
+                VARIABLE.Photo = AirLineServices.GetImageFromByteArray(VARIABLE.Photo);
+            }
+
+            return content;
+        }
+
     }
 }
