@@ -2,8 +2,8 @@
 {
     public enum TravelClass
     {
-        First = 1,
-        Business,
-        Economy
+        First_Class = 1,
+        Business_Class,
+        Economy_Class
     }
 }

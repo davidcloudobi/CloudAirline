@@ -371,10 +371,14 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Airline\NotFound.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\GetAllUsers.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\GetUsers.cshtml" />
+    <Content Include="Views\Shared\_Airline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

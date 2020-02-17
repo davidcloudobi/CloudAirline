@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AirLine.Modules.Class;
+using AirLine.Modules.Enums;
 using AirLineServices.Interface;
 using AirLineServices.SqlDataServices;
 
 namespace AirLineServices.Services
 {
-    public class AirLineServices:IAirlineServices
+    public class AirLineServices : IAirlineServices
     {
         private readonly SqlAirlineServices db;
 
@@ -19,6 +20,7 @@ namespace AirLineServices.Services
         {
             this.db = db;
         }
+
         public async Task<Airline> GetSingleAirLine(int id)
         {
             return await db.Airlines.FirstOrDefaultAsync(res => res.Id == id);
@@ -36,7 +38,7 @@ namespace AirLineServices.Services
                 db.Airlines.Add(newAirline);
             }
 
-            
+
 
             return newAirline;
         }
@@ -49,7 +51,7 @@ namespace AirLineServices.Services
             }
         }
 
-        public async  Task<int> Commit()
+        public async Task<int> Commit()
         {
             return await db.SaveChangesAsync();
         }
@@ -71,7 +73,9 @@ namespace AirLineServices.Services
 
         public async Task<IEnumerable<Airline>> FilteredAirlines(User user)
         {
-            return await db.Airlines.Where(res => res.Destination == user.Destination || res.TravelType == user.TravelType || res.BookingAmount == user.BookingAmount).ToListAsync();
+            return await db.Airlines.Where(res =>
+                res.Destination == user.Destination || res.TravelType == user.TravelType ||
+                res.BookingAmount == user.BookingAmount).ToListAsync();
         }
 
 
@@ -103,5 +107,20 @@ namespace AirLineServices.Services
             return content;
         }
 
+        public async Task<IEnumerable<Airline>> GetAllAirlineFiltered(string name, int id)
+        {
+            if (id == 0)
+            {
+
+
+                return await db.Airlines.Where(res => res.Name.Contains(name)).ToListAsync();
+            }
+
+            return await db.Airlines.Where(res => res.Name.Contains(name)  && res.TravelType == (TravelClass) id).ToListAsync();
+
+
+
+        }
     }
+
 }

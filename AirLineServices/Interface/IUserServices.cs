@@ -6,7 +6,7 @@ namespace AirLineServices.Interface
 {
     public interface IUserServices
     {
-        Task<User> AddUser(User newUser);
+        User AddUser(User newUser);
         Task<User> UpdateUser(User user);
         Task<IEnumerable<User>> GetAllUsers();
         Task<int> Commit();

@@ -1,12 +1,134 @@
-﻿@{
+﻿@model IEnumerable<AirLine.Modules.Class.Airline>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
+@{
+    var option = new List<SelectListItem>
+{
+
+    new SelectListItem {Text = "All", Value = ""},
+        new SelectListItem {Text = "First", Value = "1"},
+        new SelectListItem {Text = "Business", Value = "2"},
+        new SelectListItem {Text = "Economy", Value = "3"}
+
+    };
+
+
+
+}
+
+
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Welcome</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group row">
+            <div class="col-lg-5">
+                @Html.TextBox("airlineName", "", new { @class = "form-control-lg  ", placeholder = "Search", arialabel = "Search" })
+            </div>
+            <div class="col-lg-5">
+                @Html.DropDownList("category", option, new { @class = "form-control-lg" })
+            </div>
+            <div class="col-lg-2">
+                <button class="btn  btn-lg btn-outline-success ">Search</button>
+            </div>
+        </div>
+
+    </div>
+}
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>*@
+@*<th>
+        @Html.DisplayNameFor(model => model.Address)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Age)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.PassportId)
+    </th>*@
+@*<th>
+                @Html.DisplayNameFor(model => model.BookingAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TravelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>*@
+@*<td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PassportId)
+    </td>*@
+@*<td>
+            @Html.DisplayFor(modelItem => item.BookingAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            <img src="data:image/png;base64,@Convert.ToBase64String(@item.Photo, 0, @item.Photo.Length)" alt="@item.Name" style="width:300px" />
+        </td>
+
+    </tr>
+        }
+
+    </table>*@
+<div class="row">
+    
+        @foreach (var item in Model)
+        {
+            @Html.Partial("_Airline", item)
+        }
+    
 </div>
+
 
 <div class="row">
     <div class="col-md-4">

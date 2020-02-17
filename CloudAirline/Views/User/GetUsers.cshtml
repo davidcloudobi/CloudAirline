@@ -1,0 +1,69 @@
+﻿@model AirLine.Modules.Class.User
+
+@{
+    ViewBag.Title = "GetUsers";
+}
+
+<h2>GetUsers</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PassportId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <span class=" btn btn-primary">  @Html.ActionLink("Edit", "Edit", new { id = Model.Id })</span>
+    <span class=" btn btn-primary"> @Html.ActionLink("Back to List", "GetAllUsers")</span>
+  
+   
+</p>
+@*<span class=" btn btn-primary"></span>*@

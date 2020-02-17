@@ -1,0 +1,63 @@
+﻿@model AirLine.Modules.Class.Airline
+
+@{
+    ViewBag.Title = "_Airline";
+}
+
+@*<h2>_Airline</h2>*@
+
+<div>
+    @*<h4>Airline</h4>
+    <hr />*@
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+    </dl>*@
+    
+<div class="col-sm-3 mr-5">
+
+        <div class="card" style="width: 18rem;">
+            <img src="data:image/png;base64,@Convert.ToBase64String(@Model.Photo, 0, @Model.Photo.Length)" alt="@Model.Name" style="width: 284px; height: 200px" />
+
+            <div class="card-body">
+                <h5 class="card-title"> @Model.Name</h5>
+                @*<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>*@
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><span>Destination: </span>@Model.Destination</li>
+
+                <li class="list-group-item"><span>Category: </span>@Model.TravelType</li>
+                <li class="list-group-item"><span>Time: </span>@Model.Time</li>
+                <li class="list-group-item"><span>Amount: </span>@Model.BookingAmount</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="btn btn-primary">Book</a>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+

@@ -14,6 +14,7 @@ namespace AirLineServices.Interface
         Task<Airline> UpdateAirLine(Airline airline);
 
       Task<IEnumerable<Airline>> FilteredAirlines(User user);
+      Task<IEnumerable<Airline>> GetAllAirlineFiltered(string name, int id);
 
     }
 }
