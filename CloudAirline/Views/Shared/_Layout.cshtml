@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+﻿@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
 
-</head>
-<body>
+    </head>
+    <body>*@
 @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -30,10 +30,10 @@
             </div>
         </div>
     </div>*@
-    
-    <div class="container m-2">
+
+@*<div class="container m-2">
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="~/#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,18 +51,220 @@
             </div>
         </nav>
 
+    </div>*@
+
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wacky Trip a Travel Agency Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+    <!-- meta-tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Wacky Trip Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+
+    @* ############################################################################### *@
+
+    @*<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Slide Login Form template Responsive, Login form web template, Flat Pricing tables, Flat Drop downs Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>*@
+
+    <!-- Custom Theme files -->
+   @* <link href="/Content/login/css/style.css" rel="stylesheet" type="text/css" media="all" />*@
+    @*<link href="/Content/login/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />*@
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+   @* <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">*@
+    <!-- //web font -->
+    @* #################################################################################3 *@
+
+
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //meta-tags -->
+    <link href="~/Content/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/web/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/web/css/owl.carousel.css" type="text/css" media="all" /> <!-- Owl-Carousel-CSS -->
+    <link rel="stylesheet" href="~/Content/web/css/flexslider.css" type="text/css" media="screen" property="" />
+    <link href="~/Content/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/web/css/lightbox.css">
+    <!--web-fonts-->
+    <link href="~///fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="~///fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="~///fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner" id="home">
+        <div class="agileinfo-dot">
+            <div class="container">
+                <!-- header -->
+                <header>
+                    <!-- navigation -->
+                    <div class="w3_navigation">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header navbar-left">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="w3_navigation_pos">
+                                    <h1><a href="~/index.html"><span>W</span>acky <span>T</span>rip</a></h1>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                                <nav class="cl-effect-4" id="cl-effect-4">
+                                    <ul class="nav navbar-nav menu__list">
+                                        <li><a href="~/index.html">Home</a></li>
+                                        <li><a href="~/#about" class=" scroll">About</a></li>
+                                        <li><a href="~/#team" class=" scroll">Team</a></li>
+                                        <li><a href="~/#gallery" class=" scroll">Destinations</a></li>
+                                        <li><a href="~/#contact" class=" scroll">Contact</a></li>
+                                    </ul>
+                                    <span class="ml-5"> @Html.Partial("_LoginPartial")</span>
+                                </nav>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- //navigation -->
+                </header>
+
+            </div>
+        </div>
     </div>
 
-<div class="container body-content mb-5">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*<div class="container body-content mb-5">*@
+
+
+    @RenderBody()
+
+
+    @*<hr />*@
+    @*<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>*@
+
+
+    <div class="col-md-4 subscribe-grid">
+        <h5>Subscribe for our latest updates</h5>
+        <p>Get <span>10%</span> off on booking</p>
+        <form action="#" method="post">
+            <input type="email" placeholder="Subscribe" name="Subscribe" required="">
+            <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+        </form>
+    </div>
+    <div class="col-md-8 footer-w3layouts">
+        <div class="footer-top-agile">
+            <h6><a href="~/index.html"><span>W</span>acky <span>T</span>rip</a></h6>
+            <div class="footer-contact-w3ls">
+                <ul>
+                    <li><i class="fa fa-globe" aria-hidden="true"></i>55, 8134 Adliswil, Switzerland</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>012 345 6789</li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="~/mailto:info@example.com">info@example.com</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <ul class="top-links">
+                <li><a href="~/#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-bottom-wthree">
+            <div class="copyright-wthree">
+                <p>&copy; 2017 Wacky Trip . All Rights Reserved | Design by <a href="~/http://w3layouts.com/"> W3layouts </a></p>
+                <a href="~/#home" class="scroll bt-icon"><i class="fa fa-upload" aria-hidden="true"></i></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //Footer -->
+    <script scr="~/Content/web/js/jquery-2.2.3.min.js"></script>
+
+    <script scr="~/Content/web/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Owl-Carousel-JavaScript -->
+    <script scr="~/Content/web/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 4,
+                lazyLoad: true,
+                autoPlay: true,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- //Owl-Carousel-JavaScript -->
+    <!-- flexSlider -->
+    <script defer scr="~/Content/web/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //flexSlider -->
+    <!-- Move-top-scrolling -->
+    <script type="text/javascript" scr="~/Content/web/js/move-top.js"></script>
+    <script type="text/javascript" scr="~/Content/web/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- Move-top-scrolling -->
+    <!-- Calendar -->
+    <link rel="stylesheet" href="~/Content/web/css/jquery-ui.css" />
+    <script scr="~/Content/web/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+        });
+    </script>
+    <!-- //Calendar -->
+    <!--js for bootstrap working-->
+    <script scr="~/Content/web/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
 </body>
 </html>

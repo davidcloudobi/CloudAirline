@@ -1,53 +1,53 @@
-﻿@model IEnumerable<AirLine.Modules.Class.Airline>
+﻿@*@model IEnumerable<AirLine.Modules.Class.Airline>
 
-@{
-    ViewBag.Title = "Home Page";
-}
+    @{
+        ViewBag.Title = "Home Page";
+    }
 
-@{
-    var option = new List<SelectListItem>
-{
+    @{
+        var option = new List<SelectListItem>
+    {
 
-    new SelectListItem {Text = "All", Value = ""},
-        new SelectListItem {Text = "First", Value = "1"},
-        new SelectListItem {Text = "Business", Value = "2"},
-        new SelectListItem {Text = "Economy", Value = "3"}
+        new SelectListItem {Text = "All", Value = ""},
+            new SelectListItem {Text = "First", Value = "1"},
+            new SelectListItem {Text = "Business", Value = "2"},
+            new SelectListItem {Text = "Economy", Value = "3"}
 
-    };
-
-
-
-}
+        };
 
 
-<div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+    }
 
-    <div class="form-horizontal">
-        <h4>Welcome</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group row">
-            <div class="col-lg-5">
-                @Html.TextBox("airlineName", "", new { @class = "form-control-lg  ", placeholder = "Search", arialabel = "Search" })
-            </div>
-            <div class="col-lg-5">
-                @Html.DropDownList("category", option, new { @class = "form-control-lg" })
-            </div>
-            <div class="col-lg-2">
-                <button class="btn  btn-lg btn-outline-success ">Search</button>
-            </div>
+
+    <div class="jumbotron">
+            <h1>ASP.NET</h1>
+            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
         </div>
 
-    </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Welcome</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group row">
+                <div class="col-lg-5">
+                    @Html.TextBox("airlineName", "", new { @class = "form-control-lg  ", placeholder = "Search", arialabel = "Search" })
+                </div>
+                <div class="col-lg-5">
+                    @Html.DropDownList("category", option, new { @class = "form-control-lg" })
+                </div>
+                <div class="col-lg-2">
+                    <button class="btn  btn-lg btn-outline-success ">Search</button>
+                </div>
+            </div>
+
+        </div>
+    }*@
 
 @*<table class="table">
     <tr>
@@ -120,34 +120,271 @@
         }
 
     </table>*@
-<div class="row">
-    
-        @foreach (var item in Model)
-        {
-            @Html.Partial("_Airline", item)
-        }
-    
-</div>
+@*<div class="row">
+
+            @foreach (var item in Model)
+            {
+                @Html.Partial("_Airline", item)
+            }
+
+    </div>
 
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+<!-- banner-text -->
+
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wacky Trip a Travel Agency Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+    <!-- meta-tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Wacky Trip Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //meta-tags -->
+    <link href="~/Content/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/web/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/web/css/owl.carousel.css" type="text/css" media="all" /> <!-- Owl-Carousel-CSS -->
+    <link rel="stylesheet" href="~/Content/web/css/flexslider.css" type="text/css" media="screen" property="" />
+    <link href="~/Content/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/web/css/lightbox.css">
+    <!--web-fonts-->
+    <link href="~///fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="~///fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="~///fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner" id="home">
+        <div class="agileinfo-dot">
+            <div class="container">
+                <!-- header -->
+                <header>
+                    <!-- navigation -->
+                    <div class="w3_navigation">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-header navbar-left">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="w3_navigation_pos">
+                                    <h1><a href="~/index.html"><span>W</span>acky <span>T</span>rip</a></h1>
+                                </div>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                                <nav class="cl-effect-4" id="cl-effect-4">
+                                    @*<ul class="nav navbar-nav menu__list">
+            <li><a href="~/index.html">Home</a></li>
+            <li><a href="~/#about" class=" scroll">About</a></li>
+            <li><a href="~/#team" class=" scroll">Team</a></li>
+            <li><a href="~/#gallery" class=" scroll">Destinations</a></li>
+            <li><a href="~/#contact" class=" scroll">Contact</a></li>
+        </ul>*@
+
+                                    <ul class="nav navbar-nav menu__list">
+                                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                        <li>@Html.ActionLink("Airline", "GetAll", "Airline")</li>
+                                        <span class="ml-5"> @Html.Partial("_LoginPartial")</span>
+                                    </ul>
+                                    
+                                </nav>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- //navigation -->
+                </header>
+
+
+
+                <div class="banner-text">
+                    <h2>Hundreds of Destinations Worldwide</h2>
+                    <div class="book-form" id="register">
+                        <p>Pick your destination</p>
+                        <form action="#" method="post">
+                            <div class="col-md-3 form-time-w3layouts">
+                                <label>Travelling From</label>
+                                <select class="form-control">
+                                    <option>From</option>
+                                    <option>New York</option>
+                                    <option>Lisbon</option>
+                                    <option>Melbourne</option>
+                                    <option>Berlin</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 form-left-agileits-w3layouts ">
+                                <label>Travelling To</label>
+                                <select class="form-control">
+                                    <option>To</option>
+                                    <option>Torino</option>
+                                    <option>Madrid</option>
+                                    <option>London</option>
+                                    <option>Wellington</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 form-date-w3-agileits">
+                                <label>Departure Date</label>
+                                <input id="datepicker1" name="Text" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
+                            </div>
+                            <div class="col-md-3 form-left-agileits-submit">
+                                <input type="submit" value="search">
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="banner-btm-agileits">
+                        <div class="col-md-4 bann-left-w3-agile">
+                            <h3><span>24/7</span>Support</h3>
+                        </div>
+                        <div class="col-md-4 button-agileits">
+                            <a href="#contact" class="hvr-ripple-out scroll">Get in touch</a>
+                        </div>
+                        <div class="col-md-4 bann-right-wthree">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+
+    <div class="col-md-4 subscribe-grid">
+        <h5>Subscribe for our latest updates</h5>
+        <p>Get <span>10%</span> off on booking</p>
+        <form action="#" method="post">
+            <input type="email" placeholder="Subscribe" name="Subscribe" required="">
+            <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+        </form>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-8 footer-w3layouts">
+        <div class="footer-top-agile">
+            <h6><a href="~/index.html"><span>W</span>acky <span>T</span>rip</a></h6>
+            <div class="footer-contact-w3ls">
+                <ul>
+                    <li><i class="fa fa-globe" aria-hidden="true"></i>55, 8134 Adliswil, Switzerland</li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>012 345 6789</li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="~/mailto:info@example.com">info@example.com</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <ul class="top-links">
+                <li><a href="~/#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="~/#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-bottom-wthree">
+            <div class="copyright-wthree">
+                <p>&copy; 2017 Wacky Trip . All Rights Reserved | Design by <a href="~/http://w3layouts.com/"> W3layouts </a></p>
+                <a href="~/#home" class="scroll bt-icon"><i class="fa fa-upload" aria-hidden="true"></i></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
-</div>
+    <!-- //Footer -->
+    <script scr="~/Content/web/js/jquery-2.2.3.min.js"></script>
+
+    <script scr="~/Content/web/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Owl-Carousel-JavaScript -->
+    <script scr="~/Content/web/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 4,
+                lazyLoad: true,
+                autoPlay: true,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- //Owl-Carousel-JavaScript -->
+    <!-- flexSlider -->
+    <script defer scr="~/Content/web/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //flexSlider -->
+    <!-- Move-top-scrolling -->
+    <script type="text/javascript" scr="~/Content/web/js/move-top.js"></script>
+    <script type="text/javascript" scr="~/Content/web/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- Move-top-scrolling -->
+    <!-- Calendar -->
+    <link rel="stylesheet" href="~/Content/web/css/jquery-ui.css" />
+    <script scr="~/Content/web/js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+        });
+    </script>
+    <!-- //Calendar -->
+    <!--js for bootstrap working-->
+    <script scr="~/Content/web/js/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>

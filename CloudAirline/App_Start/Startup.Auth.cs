@@ -46,9 +46,9 @@ namespace CloudAirline
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "ef4139c2-21d0-44ea-83f6-f8b7a8cd379f",
+                clientSecret: "H9cVxcP6Nu.3ZtUD?LleHU]=JFFWzVC2");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
